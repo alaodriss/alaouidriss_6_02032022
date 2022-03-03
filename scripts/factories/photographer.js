@@ -13,7 +13,7 @@ function photographerFactory(data) {
         const span = document.createElement( 'span' );
         span.textContent = city+' '+country;
 
-        const ParaGraphe = document.createElement( 'p' );
+        const ParaGraphe = document.createElement( 'div' );
         ParaGraphe.textContent = tagline;
 
         const priceUnit = document.createElement( 'p' );
