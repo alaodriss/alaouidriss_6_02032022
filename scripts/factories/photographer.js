@@ -11,7 +11,7 @@ function photographerFactory(data) {
         h2.textContent = name;
         /* Ajouter "city+country" +taglien+price */
         const span = document.createElement( 'span' );
-        span.textContent = city+' '+country;
+        span.textContent = `${city} ${country}`;
 
         const ParaGraphe = document.createElement( 'div' );
         ParaGraphe.textContent = tagline;
