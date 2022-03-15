@@ -6,6 +6,7 @@
             const photographerModel = photographerFactory(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
+            // console.log(userCardDOM);
         });
     };
 
@@ -21,3 +22,6 @@
     
     
     init();
+
+
+    
