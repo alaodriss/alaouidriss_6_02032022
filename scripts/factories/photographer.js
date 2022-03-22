@@ -1,32 +1,39 @@
 function photographerFactory(data) {
-    const { name, portrait ,city , country, tagline,price} = data;
-
-    const picture = `assets/photographers/${portrait}`;
-
-    function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        /* Ajouter "city+country" +taglien+price */
-        const span = document.createElement( 'span' );
-        span.textContent = `${city} ${country}`;
-
-        const ParaGraphe = document.createElement( 'div' );
-        ParaGraphe.textContent = tagline;
-
-        const priceUnit = document.createElement( 'p' );
-        priceUnit.textContent = `${price}/jour`;
-
-        article.appendChild(img);
-        article.appendChild(h2);
-
-        article.appendChild(span);
-        article.appendChild(ParaGraphe);
-        article.appendChild(priceUnit);
-
-        return (article);
+    const { id, name, portrait, city, country, tagline, price, alt } = data;
+    const picture = `./assets/photographers/PhotographersID/${portrait}`;
+  
+    function getUserCardDOM(){
+      const $wrapper = document.createElement("div");
+      $wrapper.classList.add("photographer_card");
+      $wrapper.classList.add(id);
+  
+      const photograph = `
+      <a href="./photographer.html?id=${id}" tabindex="0">
+        <div class="photographer_img">
+          <img src="${picture}" alt="">
+          <h2>${name}</h2>
+        </div>
+      </a>
+      <div class="photographer_info" tabindex="0">
+        <p class="city">${city + ", " + country}</p>
+        <p class="tagline">${tagline}</p>
+        <p class="price">${price + "&euro;" + "/jour"}</p>
+      </div>
+      `;
+  
+      $wrapper.innerHTML = photograph;
+  
+      return $wrapper;
     }
-    return { name, picture, getUserCardDOM }
-}
+    return {
+      id,
+      name,
+      portrait,
+      city,
+      country,
+      tagline,
+      price,
+      alt,
+      getUserCardDOM,
+    };
+  }

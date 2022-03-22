@@ -3,12 +3,43 @@
 
 // header foreach photographer
 function displayPhotographerData(photograph) {
-    const PhotographerSection = document.querySelector( ".photograph_header");
-  
-    photograph.filter((person) => {
-      const PhotographerPageModel = photographerPageFactory(person);
-      const PhotographerDOM = PhotographerPageModel.PhotographerHeaderDOM();
-      PhotographerSection.appendChild(PhotographerDOM);
+  const PhotographePagerSection = document.querySelector(".photograph_header");
+ 
+  photograph.forEach((person) => {
+    const PhotographerPageModel = photographerPageFactory(person);
+    const PhotographerDOM = PhotographerPageModel.PhotographerHeaderDOM();
+    PhotographePagerSection.appendChild(PhotographerDOM);
+    console.log(PhotographerDOM);
+  });
+}
+
+function initPhotographer() {
+  // Récupère les datas des photographes
+  fetch("./data/photographers.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      //Récupère id photographe du URL
+      const IDphotographer = new URLSearchParams(
+        document.location.search.substring(1)
+      );
+      const idURL = IDphotographer.get("id");
+      console.log(idURL);
+
+      const { photographers } = data;
+    
+
+      //filtre photographe avec id
+      const Showphotographer = photographers.filter(
+        (photographer) => photographer.id == idURL
+      );
+
+      // show header photographer
+      displayPhotographerData(Showphotographer);
+
+
+
     });
-  }
-  
+}
+initPhotographer();
