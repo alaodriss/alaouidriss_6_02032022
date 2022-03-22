@@ -3,9 +3,9 @@ function photographerFactory(data) {
     const picture = `./assets/photographers/PhotographersID/${portrait}`;
   
     function getUserCardDOM(){
-      const $wrapper = document.createElement("div");
-      $wrapper.classList.add("photographer_card");
-      $wrapper.classList.add(id);
+      const $User = document.createElement("div");
+      $User.classList.add("photographer_card");
+      $User.classList.add(id);
   
       const photograph = `
       <a href="./photographer.html?id=${id}" tabindex="0">
@@ -21,9 +21,9 @@ function photographerFactory(data) {
       </div>
       `;
   
-      $wrapper.innerHTML = photograph;
+      $User .innerHTML = photograph;
   
-      return $wrapper;
+      return $User ;
     }
     return {
       id,

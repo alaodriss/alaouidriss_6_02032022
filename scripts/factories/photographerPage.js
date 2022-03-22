@@ -5,9 +5,9 @@ function photographerPageFactory(dataPage) {
 
   console.log( picturePage);
   function PhotographerHeaderDOM() {
-    const $wrapperHeader = document.createElement("div");
-    $wrapperHeader.classList.add("photograph_header");
-    $wrapperHeader.classList.add(id);
+    const $blockUserHeader = document.createElement("div");
+    $blockUserHeader.classList.add("photograph_header");
+    $blockUserHeader.classList.add(id);
 
     const photographerCard = `
     <div class="photograph-info">
@@ -25,8 +25,8 @@ function photographerPageFactory(dataPage) {
             `;
       
 
-    $wrapperHeader.innerHTML = photographerCard;
-    return $wrapperHeader;
+    $blockUserHeader.innerHTML = photographerCard;
+    return $blockUserHeader;
   }
 
   

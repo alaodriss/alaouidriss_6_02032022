@@ -13,6 +13,13 @@ function displayPhotographerData(photograph) {
   });
 }
 
+// button sort popularity/title/date
+function displaySortImages() {
+  const SortButtonSection = document.querySelector(".select-dropdown");
+  const buttonSort = sortImagesDOM();
+  SortButtonSection.appendChild(buttonSort);
+}
+
 function initPhotographer() {
   // Récupère les datas des photographes
   fetch("./data/photographers.json")
@@ -38,7 +45,8 @@ function initPhotographer() {
       // show header photographer
       displayPhotographerData(Showphotographer);
 
-
+      //show button sort by
+      displaySortImages();
 
     });
 }
