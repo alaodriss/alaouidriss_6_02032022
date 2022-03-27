@@ -6,17 +6,18 @@
             const photographerModel = photographerFactory(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM)
-          //console.log(userCardDOM);
+           console.log(userCardDOM);
         });
     };
 
     async function init() {
         // Récupère les datas des photographes
-        fetch("./data/photographers.json")
-        .then((response) => response.json())
+        fetchAllPhotographers()
         .then((data) => {
           const { photographers } = data;
-          displayData(photographers);
+      
+          displayData(data);
+
         });
     }
     

@@ -21,32 +21,19 @@ function displaySortImages() {
 }
 
 function initPhotographer() {
-  // Récupère les datas des photographes
-  fetch("./data/photographers.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
+  //Récupère id photographe du URL
+  const IDphotographer = new URLSearchParams(
+    document.location.search.substring(1)
+  );
 
-      //Récupère id photographe du URL
-      const IDphotographer = new URLSearchParams(
-        document.location.search.substring(1)
-      );
-      const idURL = IDphotographer.get("id");
-      console.log(idURL);
-
-      const { photographers } = data;
-    
-
-      //filtre photographe avec id
-      const Showphotographer = photographers.filter(
-        (photographer) => photographer.id == idURL
-      );
+  const idURL = IDphotographer.get("id");
+  fetchPhotographerById(idURL)
+    .then((photographer) => {
 
       // show header photographer
-      displayPhotographerData(Showphotographer);
-
-      //show button sort by
-      displaySortImages();
+      displayPhotographerData(photographer);
+        
+   
 
     });
 }
