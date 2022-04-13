@@ -12,3 +12,19 @@ async function fetchPhotographerById(id){
  
     }) 
   }
+
+
+async function fetchMediaById(){ 
+ // Récupère les datas des media
+ const data = await fetch("./data/photographers.json")
+ .then((response) => response.json());
+return data.media
+ 
+    }
+async function fetAllchMediaById(id){ 
+ return fetchMediaById()
+   .then((media)=> {   
+   return media.filter(r => r.id == id); 
+   }) 
+      }
+    
