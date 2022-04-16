@@ -27,12 +27,15 @@
 
     </main>
     <div id="contact_modal">
+      <form id="cadreForm">
+
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <h2 class="title-from">Contactez-moi</h2>
+          <p id="contact_modals" aria-hidden="true" role="dialog" aria-modal="true">
+          </p>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form id="cadreForm">
 					<div>
             <div class="formData" >
               <div class="nameUser"></div>
@@ -73,9 +76,9 @@
 					</div>
 
            <input id="btn-submit" class="contact_button" type="submit"  value="Envoyer"/>
-
-				</form>
 			</div>
+    </form>
+
 		</div>
 
     <script src="/scripts/factories/PagePhotographer.js"></script>

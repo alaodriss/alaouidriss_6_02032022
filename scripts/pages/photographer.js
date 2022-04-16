@@ -13,18 +13,17 @@ function displayPhotographerData(photograph) {
     });
   }
 
+// create contact form
+function displayContactForm(photographerNameCard) {
+  const cardFormSection = document.getElementById("contact_modals");
 
-  // button formContact 
-function nameUserContact(dataFrom) {
-  const contactFrom = document.querySelectorAll(".nameUser");
-
-  dataFrom?.forEach(() => {
-    const idUserName = nameUserContact();
-  const nameUserform = idUserName.nameUserContactDOM();
-  contactFrom.appendChild(nameUserform);
-    });
-
-    console.log(contactFrom)
+  photographerNameCard.forEach((name) => {
+    console.log(name)
+    const cardFormModel = contactFormFactory(name);
+    const cardFormDOM = cardFormModel.contactFormDOM();
+    cardFormSection.appendChild(cardFormDOM);
+  });
+  console.log(name)
 }
 // button sort popularity/title/date
 function displaySortImages() {
@@ -138,10 +137,10 @@ function init() {
           }
         });
 
-        
-      
+         // display formulaire
+         displayContactForm(Showphotographer);
+
     });
-    nameUserContact()
 
 };
 

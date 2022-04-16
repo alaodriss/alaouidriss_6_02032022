@@ -1,23 +1,6 @@
-function nameUserContact(dataFrom) {
-    const { id, name} = dataFrom;
 
-    function nameUserContactDOM() {
-        
-        const $UserName = document.createElement( 'div' );
-        $UserName.classList.add(id);
-  
-        const nameUser = `
-          <div class="photographer_user">
-            <h2>${name}</h2>
-          </div>
-        `;
-    
-        $UserName .innerHTML = nameUser;
-    
-        return  $UserName ;
-    }
-    return {id, name, nameUserContactDOM }
-}
+
+
 
 
 let form = document.querySelector("#cadreForm");
@@ -135,3 +118,27 @@ form.addEventListener('submit',function(event){
 
 
 });
+
+
+/** get id with name */
+
+function contactFormFactory(data) {
+  const { name, id } = data;
+function contactFormDOM() {
+  const $wrapper = document.createElement("div");
+  // $wrapper.classList.add("modal");
+  $wrapper.setAttribute("aria-label", "image closeup view");
+
+  let cardForm = "";
+
+  cardForm += `
+
+      <div class="modal_name" tabindex="0">${name}</div> 
+`;
+
+  $wrapper.innerHTML = cardForm;
+  return $wrapper;
+}
+return { name, id, contactFormDOM };
+
+}
