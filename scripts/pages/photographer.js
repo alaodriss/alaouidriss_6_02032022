@@ -9,7 +9,6 @@ function displayPhotographerData(photograph) {
       const PhotographerPageModel = photographerPageFactory(person);
       const PhotographerDOM = PhotographerPageModel.PhotographerHeaderDOM();
       PhotographePagerSection.appendChild(PhotographerDOM);
-      console.log(PhotographerDOM);
     });
   }
 
@@ -23,7 +22,6 @@ function displayContactForm(photographerNameCard) {
     const cardFormDOM = cardFormModel.contactFormDOM();
     cardFormSection.appendChild(cardFormDOM);
   });
-  console.log(name)
 }
 // button sort popularity/title/date
 function displaySortImages() {
@@ -74,9 +72,17 @@ function displayMediaData(mediasphotographer, filterBy) {
     MediaSection.appendChild(MediaDOM);
   });
 
-  console.log(mediasphotographerFiltered)
 }
 
+function displayTotalLikes(photographerLike) {
+  const TotalLikesSection = document.querySelector(".likes-footer");
+  photographerLike.forEach((likes) => {
+    const TotalLikesModel = TotalLikesFactory(likes);
+    const TotalLikesDOM = TotalLikesModel.TotalLikesDOM();
+    TotalLikesSection.append(TotalLikesDOM);
+  });
+
+}
 
 
 function init() {
@@ -106,12 +112,30 @@ function init() {
 
        // show trier medias
       displaySortImages()
-
+      console.log(AddClickHeart()) 
       
       const ShowMediaphototgrapher = media.filter(
         (medias) => medias.photographerId == idURL
       );
 
+
+       // variable accumule likes photographer
+       let totallikes = null;
+
+       // calcule total de likes par photographe
+       ShowMediaphototgrapher.forEach((media) => {
+         totallikes = totallikes + media.likes;
+       });
+ 
+       //display total likes footer
+       displayTotalLikes(Showphotographer);
+
+       const totalLikesText = document.querySelector(".likes-footer h3");
+       totalLikesText.innerHTML = totallikes;
+
+       console.log(totalLikesText)
+       console.log(AddClickHeart())
+       AddClickHeart();
 
         // show header medias
         displayMediaData(ShowMediaphototgrapher);
