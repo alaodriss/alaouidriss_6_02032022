@@ -112,7 +112,7 @@ function init() {
 
        // show trier medias
       displaySortImages()
-      console.log(AddClickHeart()) 
+      // console.log(AddClickHeart()) 
       
       const ShowMediaphototgrapher = media.filter(
         (medias) => medias.photographerId == idURL
@@ -133,10 +133,7 @@ function init() {
        const totalLikesText = document.querySelector(".likes-footer h3");
        totalLikesText.innerHTML = totallikes;
 
-       console.log(totalLikesText)
-       console.log(AddClickHeart())
-       AddClickHeart();
-
+    
         // show header medias
         displayMediaData(ShowMediaphototgrapher);
 
@@ -159,11 +156,14 @@ function init() {
           if (e.target.value === "title") {
             displayMediaData(ShowMediaphototgrapher, "title");
           }
+
         });
 
          // display formulaire
          displayContactForm(Showphotographer);
 
+         AddClickHeart()
+         console.log( AddClickHeart())
     });
 
 };

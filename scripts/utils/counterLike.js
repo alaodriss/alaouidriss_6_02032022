@@ -1,4 +1,5 @@
 function AddClickHeart() {
+  
   const totalLikesText = document.querySelector(".total_likes_txt");
   const clickLikes = document.querySelectorAll(".like_img");
 
@@ -10,8 +11,9 @@ function AddClickHeart() {
       siblingClick.innerHTML = parseInt(siblingClick.innerHTML) + 1;
       totalLikesText.innerHTML = parseInt(totalLikesText.innerHTML) + 1;
     });
-    console.log(totalLikesText)
+   
   }
+
   for (const clickHeart of clickLikes) {
     clickHeart.addEventListener("keydown", (e) => {
       if (e.code === "Enter") {
