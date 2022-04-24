@@ -35,6 +35,23 @@
     top: 42%;
 }
 
+.button-en 
+
+    {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        padding: 11px;
+        width: 170px;
+        height: 70px;
+        border: none;
+        background-color: #901C1C;
+        border-radius: 5px;
+        cursor: pointer;
+       
+    }
+
+
 .modal {
     border-radius: 4px;
     background-color: #DB8876;
@@ -251,7 +268,7 @@ label {
     top: 24%;
 }
 #message{
-    width: auto;
+    width: 386px;
 }
 
 /* 
