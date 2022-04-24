@@ -141,17 +141,18 @@ function init() {
     
         // show header medias
         displayMediaData(ShowMediaphototgrapher);
-
-
+        AddClickHeart()
+        lightboxShow() 
         const sortByType = document.getElementById("select_images");
 
         //change orientation arrow buttom sort by popularity/date/title
         sortByType.addEventListener("click", () => {
-          const arrowUpDown = document.querySelector(".arrow-down");
-          arrowUpDown.classList.toggle("rotated");
+          // const arrowUpDown = document.querySelector(".arrow-down");
+          // arrowUpDown.classList.toggle("rotated");
         });
   
         sortByType.addEventListener("change", (e) => {
+
           if (e.target.value === "popularity") {
             displayMediaData(ShowMediaphototgrapher, "popularity");
           }
@@ -161,15 +162,15 @@ function init() {
           if (e.target.value === "title") {
             displayMediaData(ShowMediaphototgrapher, "title");
           }
-
+          AddClickHeart()
+          //  LightDOM();
+           lightboxShow() 
         });
 
          // display formulaire
          displayContactForm(Showphotographer);
 
-         AddClickHeart()
-         LightDOM();
-         lightboxShow() 
+     
     });
 
 };

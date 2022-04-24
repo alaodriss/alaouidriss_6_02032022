@@ -88,6 +88,7 @@ const validEmail = function(emailElt){
   }
 
 
+  
   // function de validation de formilaire 
 
   function validate(form) {
@@ -107,11 +108,17 @@ form.addEventListener('submit',function(event){
   event.preventDefault();
   console.log(event);
   if (validate(this)){
-    
+    console.log( ` Prénom :  ${first.value} `)
+    console.log( ` Nom :  ${last.value} `)
+    console.log( ` E-mail :  ${email.value} `)
+
+    const message = document.getElementById('message')
+    console.log( ` Message :  ${message.value} `)
+
     form.reset();
 
     closeModal();
-    openConfirmationMessage();
+    // openConfirmationMessage();
   } else{
   
   }

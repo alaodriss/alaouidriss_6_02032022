@@ -10,7 +10,7 @@ function MediaPageFactory(data) {
       $wrapper.classList.add("photograph-catalog-card");
   
       let cardmedias = "";
-      cardmedias += `<a href="#" class="media_link" data-mediaid="${id}" onclick="LightDOM()" role="button" aria-label="${alt}" tabindex="0">
+      cardmedias += `<a href="#" class="media_link" data-mediaid="${id}" role="button" aria-label="${alt}" tabindex="0">
   `;
       if (video !== undefined) {
         cardmedias += `<video class="card_video medias_all" aria-label="${alt}" controls>

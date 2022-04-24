@@ -41,11 +41,11 @@ function lightboxShow() {
       currentSlide(i + 1);
 
       // disable tabindex for other divs outside form
-      document.querySelector("header a").setAttribute("tabIndex", "-1"); //disable tabindex logo
-      document.querySelector(".photograph-name").setAttribute("tabIndex", "-1"); //disable tabindex photogaph name header
-      document.querySelector(".photograph-txt").setAttribute("tabIndex", "-1"); //disable tabindex photogaph city and tagline header
-      document.querySelector(".contact_me").setAttribute("tabIndex", "-1"); //disable tabindex contact button header
-      document.querySelector(".photograph-img").setAttribute("tabIndex", "-1"); //disable tabindex image photographer header
+      document.querySelector("header img").setAttribute("tabIndex", "-1"); //disable tabindex logo
+      document.querySelector("h2").setAttribute("tabIndex", "-1"); //disable tabindex photogaph name header
+      document.querySelector(".photographer_infouser").setAttribute("tabIndex", "-1"); //disable tabindex photogaph city and tagline header
+      document.querySelector(".contact_button").setAttribute("tabIndex", "-1"); //disable tabindex contact button header
+      document.querySelector("img").setAttribute("tabIndex", "-1"); //disable tabindex image photographer header
       document.querySelector(".likes-price").setAttribute("tabIndex", "-1"); //disable tabindex footer likes
       document.querySelector("#sort").setAttribute("tabIndex", "-1"); //disable tabindex sort by text
       document.querySelector("#select_images").setAttribute("tabIndex", "-1"); //disable tabindex sort button
