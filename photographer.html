@@ -25,11 +25,15 @@
     <section class="photograph-catalog-cards" role="region" aria-label="catalog medias">
     </section>
 
+    
     <!-- photograph likes and price  -->
     <footer class="likes-footer" role="contentinfo">
     </footer>
     </main>
-
+     
+       <!-- carousel  -->
+  <section class="lightbox_modal" aria-hidden="true" role="dialog" aria-modal="true">
+  </section>
     
     <div id="contact_modal">
       <form id="cadreForm">
@@ -72,7 +76,7 @@
               <label for="message">Votre message</label>
               <br>
               <textarea id="message" name="message"
-                  rows="5" cols="33">...
+                  rows="5" cols="33">
               </textarea>
               <span class="error" id="email_error"></span>
               <br>
@@ -91,8 +95,11 @@
 
     <script src="/scripts/utils/counterLike.js"></script>
     <script src="/scripts/factories/medias.js"></script>
-    <script src="/scripts/factories/carrousels.js"></script>
+
     <script src="/scripts/utils/lightbox.js"></script>
+    
+    <script src="/scripts/factories/lightBox.js"></script>
+   
     <script src="/scripts/factories/like.js"></script>
  
 

@@ -17,7 +17,6 @@ function displayContactForm(photographerNameCard) {
   const cardFormSection = document.getElementById("contact_modals");
 
   photographerNameCard.forEach((name) => {
-    console.log(name)
     const cardFormModel = contactFormFactory(name);
     const cardFormDOM = cardFormModel.contactFormDOM();
     cardFormSection.appendChild(cardFormDOM);
@@ -26,8 +25,8 @@ function displayContactForm(photographerNameCard) {
 // button sort popularity/title/date
 function displaySortImages() {
   const SortButtonSection = document.querySelector(".select-dropdown");
-  // const buttonSort = sortMedia();
-  SortButtonSection.appendChild(sortMedia());
+  const buttonSort = sortImagesDOM();
+  SortButtonSection.appendChild(buttonSort);
 }
 
 // display images by photographer
@@ -72,6 +71,14 @@ function displayMediaData(mediasphotographer, filterBy) {
     MediaSection.appendChild(MediaDOM);
   });
 
+  const modalLightBox = document.querySelector(".lightbox_modal");
+
+  // create LightBoxDOM
+  modalLightBox.innerHTML = "";
+  const LightBoxDOM = LightDOM();
+  modalLightBox.appendChild(LightBoxDOM);
+
+
 }
 
 function displayTotalLikes(photographerLike) {
@@ -90,7 +97,7 @@ function init() {
     fetch("./data/photographers.json")
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
+        // console.log(data);
 
 
         //Récupère id photographe du URL
@@ -109,10 +116,8 @@ function init() {
   
       // show header photographer
       displayPhotographerData(Showphotographer);
-
        // show trier medias
       displaySortImages()
-      // console.log(AddClickHeart()) 
       
       const ShowMediaphototgrapher = media.filter(
         (medias) => medias.photographerId == idURL
@@ -126,13 +131,13 @@ function init() {
        ShowMediaphototgrapher.forEach((media) => {
          totallikes = totallikes + media.likes;
        });
- 
+       
        //display total likes footer
        displayTotalLikes(Showphotographer);
 
        const totalLikesText = document.querySelector(".likes-footer h3");
        totalLikesText.innerHTML = totallikes;
-
+       
     
         // show header medias
         displayMediaData(ShowMediaphototgrapher);
@@ -163,7 +168,8 @@ function init() {
          displayContactForm(Showphotographer);
 
          AddClickHeart()
-         console.log( AddClickHeart())
+         LightDOM();
+         lightboxShow() 
     });
 
 };

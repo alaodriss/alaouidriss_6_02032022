@@ -1,4 +1,4 @@
-function sortMedia() {
+function sortImagesDOM() {
   
    
 const $media= document.createElement( 'div' );
