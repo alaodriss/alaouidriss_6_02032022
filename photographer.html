@@ -4,14 +4,13 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/79ecec84fe.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"> <img src="assets/images/logo.png" class="logo" alt="logo"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -19,31 +18,34 @@
       </div>
 
        <!-- button sort popularity/date/title  -->
-       <div class="select-dropdown" role="listbox"> </div>
+       <div class="select-dropdown" id="test" drole="listbox"> </div>
 
         <!-- photograph catalog images  -->
-    <section class="photograph-catalog-cards" role="region" aria-label="catalog medias">
-    </section>
+    <div class="photograph-catalog-cards" role="region" aria-label="catalog medias">
+    </div>
 
     
     <!-- photograph likes and price  -->
-    <footer class="likes-footer" role="contentinfo">
+    <footer>
+      <div class="likes-footer" role="contentinfo">
+
+      </div>
     </footer>
     </main>
      
        <!-- carousel  -->
-  <section class="lightbox_modal" aria-hidden="true" role="dialog" aria-modal="true">
-  </section>
+  <div class="lightbox_modal" aria-hidden="true" role="dialog" aria-modal="true">
+  </div>
     
     <div id="contact_modal">
       <form id="cadreForm">
 
-			<div class="modal">
+			<div class="modal"  role="group" aria-label="coordonnee">
 				<header>
           <h2 class="title-from">Contactez-moi</h2>
           <p id="contact_modals" aria-hidden="true" role="dialog" aria-modal="true">
           </p>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="icon" />
         </header>
 					<div>
             <div class="formData" >
@@ -78,8 +80,7 @@
               <textarea id="message" name="message"
                   rows="5" cols="33">
               </textarea>
-              <span class="error" id="email_error"></span>
-              <br>
+      
             </div>
 
 					</div>
@@ -91,7 +92,7 @@
 		</div>
 
     <script src="/scripts/factories/PagePhotographer.js"></script>
-    <script src="/scripts/factories/trier.js"></script>
+    <script src="/scripts/factories/trier.js" defer></script>
 
     <script src="/scripts/utils/counterLike.js"></script>
     <script src="/scripts/factories/medias.js"></script>

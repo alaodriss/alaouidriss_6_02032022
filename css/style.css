@@ -29,13 +29,18 @@ header {
     margin: auto;
 }
 
-/* header a {
+header a {
     margin-left: 50px;
-} */
-
-h1 {
+}
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+ h1 {
     color: #901C1C;
-    /* margin-right: 50px; */
+    margin-left: 720px;
 }
 
 .logo {

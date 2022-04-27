@@ -26,7 +26,7 @@ function displayContactForm(photographerNameCard) {
 function displaySortImages() {
   const SortButtonSection = document.querySelector(".select-dropdown");
   const buttonSort = sortImagesDOM();
-  SortButtonSection.appendChild(buttonSort);
+  SortButtonSection?.appendChild(buttonSort);
 }
 
 // display images by photographer
@@ -118,7 +118,6 @@ function init() {
       displayPhotographerData(Showphotographer);
        // show trier medias
       displaySortImages()
-      
       const ShowMediaphototgrapher = media.filter(
         (medias) => medias.photographerId == idURL
       );

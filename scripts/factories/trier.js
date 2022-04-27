@@ -13,7 +13,8 @@ const $media= document.createElement( 'div' );
           <option value="date">Date</option>
           <option value="title">Titre</option>
         </select>
-        <!-- <i class="fas fa-chevron-down arrow-down"></i>-->
+        <i class="fas fa-chevron-down arrow-down"></i>
+        
         `;
     
         $media .innerHTML = photographeMedida;

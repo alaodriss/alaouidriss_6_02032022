@@ -8,9 +8,7 @@ function LightDOM() {
   
     const mediasAll = document.querySelectorAll(".medias_all");
   
-    const mediasTitleAll = document.querySelectorAll(
-      "h2"
-    );
+    const mediasTitleAll = document.querySelectorAll("h3");
   
     for (var i = 0; i < mediasAll.length; i++) {
       const modalMediaDiv = document.createElement("div");

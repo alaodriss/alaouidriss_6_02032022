@@ -48,7 +48,7 @@
         background-color: #901C1C;
         border-radius: 5px;
         cursor: pointer;
-       
+        margin-top: 12px;
     }
 
 
@@ -69,7 +69,9 @@
     justify-content: space-between;
     width: 100%;
 } */
-
+.photograph-catalog-like{
+    color: #901C1C;
+}
 .modal header img {
     cursor: pointer;
     width: 27px;
@@ -172,25 +174,77 @@ form input {
 }
 
 /****************  Filter ********************/
-label {
-    font-weight: bold;
-    margin-left: 4px;
+/* select dropdown 
+**
+*/
+.select-dropdown {
+    display: inline-flex;
+    position: relative;
+    margin-top: 10px;
+    font-size: 1.125em;
 }
-#select_images{
-    background-color: #901c1c   ;
-    color: #FAFAFA;
-    padding: 17px;
-    border: none;
-    border-radius: 5px;
+
+.select-dropdown .sort_medias {
+    display: block;
+}
+
+.select-dropdown label {
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.select-dropdown select {
+    width: 170px;
+    height: 70px;
     font-weight: bold;
-    margin: 20px 0 0 20px;
+    color: white;
+    padding: 11px 15px;
     border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    text-indent: 1px;
+    outline: none;
+
+    /* hide arrow selector  */
+    appearance: none;
+
+}
+
+.select-dropdown select:hover,
+.select-dropdown select:focus {
+    color: #000;
+    background-color: #db8876;
+}
+
+.select-dropdown select:not(:focus) {
+    color: #fff;
+    background-color: #901C1C;
+}
+
+.select-dropdown option{
+    line-height: 30px;
+    background-color: #901C1C;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    outline: none;
+    color: #fff;
+}
+
+.select-dropdown i {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    color: white;
+    font-size: 1.125em;
+    pointer-events: none;
+
 }
 
 /****************  medias ********************/
-/* photographers catalog image *
-***
- */
 
 
 /* rotation button sort popularity/date/title  */
@@ -234,7 +288,7 @@ label {
     align-items: flex-end;
 }
 
-.photograph-catalog-info h2 {
+.photograph-catalog-info h3 {
     font-size: 1.28em;
     line-height: 31px;
     color: #901C1C;
@@ -345,7 +399,7 @@ label {
     margin: 30px auto 10px;
 }
 
-.lightbox_modal h2 {
+.lightbox_modal h3 {
     font-size: 1.2em;
     color: #901C1C;
     margin-top: 20px;
